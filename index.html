@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoodWave – музыкальный сайт под настроение</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div class="logo-title">
+          <span>MoodWave</span>
+          <span>Музыка, которая чувствует вас</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#idea">Идея</a>
+        <a href="#unique">Уникальность</a>
+        <a href="#wireframes">Макеты</a>
+        <a href="#scenarios">Сценарии</a>
+        <a href="#tech">Технологии</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>Итоговый проект · React, TypeScript</span>
+        </div>
+        <h1 class="hero-title">Музыка, которая понимает ваше настроение</h1>
+        <p class="hero-subtitle">
+          MoodWave — музыкальный сервис, который подбирает треки не только по жанру, 
+          но и по эмоциональному состоянию и текущей деятельности пользователя.
+        </p>
+        <div class="hero-tags">
+          <span>Эмоциональный интеллект</span>
+          <span>Контекстный подбор</span>
+          <span>Мгновенная загрузка</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToId('wireframes')">Смотреть макеты</button>
+          <button class="btn btn-ghost" onclick="scrollToId('tech')">
+            <i class="fas fa-code"></i> Технологии
+          </button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-info">
+          <p>Использует алгоритмы анализа настроения и машинного обучения для точного подбора треков под ваше состояние и занятие.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="idea">
+      <div class="section-tag">Идея проекта</div>
+      <h2 class="section-title">Проблема и решение</h2>
+      <p>Люди тратят 15-20 минут ежедневно на поиск подходящей музыки. Существующие сервисы предлагают общие рекомендации без учета контекста и настроения.</p>
+      <p>MoodWave решает эту проблему через контекстный поиск: сочетание настроения + активности + жанра. Приложение учитывает психологическое состояние и занятия пользователя.</p>
+    </section>
+
+    <section id="unique">
+      <div class="section-tag">Уникальность проекта</div>
+      <h2 class="section-title">Чем MoodWave лучше существующих решений</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Эмоциональная карта на ML</h3>
+          <p>Используем предобученные модели анализа настроения (NLP) для классификации треков по 256 эмоциональным состояниям, а не просто по тегам.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Музыкальные истории</h3>
+          <p>Каждый трек можно дополнить историей или воспоминанием. Плейлисты становятся дневниками, а не просто списками песен.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Оптимизированная загрузка</h3>
+          <p>Вся подборка загружается сразу (batch loading), а не по одному треку как у конкурентов. Экономит время и улучшает UX.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <div class="section-tag">Преимущества</div>
+      <h2 class="section-title">Сравнение с Яндекс.Музыкой</h2>
+      
+      <div class="comparison-table">
+        <div class="table-row">
+          <div class="table-cell feature">Поиск по настроению</div>
+          <div class="table-cell competitor">
+            <i class="fas fa-times red"></i>
+            <span>Базовые теги (грустно/весело)</span>
+          </div>
+          <div class="table-cell our">
+            <i class="fas fa-check green"></i>
+            <span>ML-анализ 256 эмоциональных состояний</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="table-cell feature">Контекст треков</div>
+          <div class="table-cell competitor">
+            <i class="fas fa-times red"></i>
+            <span>Только метаданные (исполнитель, альбом)</span>
+          </div>
+          <div class="table-cell our">
+            <i class="fas fa-check green"></i>
+            <span>Истории пользователей + временные метки</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="table-cell feature">Скорость работы</div>
+          <div class="table-cell competitor">
+            <i class="fas fa-clock yellow"></i>
+            <span>Ленивая подгрузка (lazy loading)</span>
+          </div>
+          <div class="table-cell our">
+            <i class="fas fa-bolt green"></i>
+            <span>Пакетная загрузка всей подборки</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="table-cell feature">Персонализация</div>
+          <div class="table-cell competitor">
+            <i class="fas fa-chart-line"></i>
+            <span>На основе истории прослушиваний</span>
+          </div>
+          <div class="table-cell our">
+            <i class="fas fa-user-cog"></i>
+            <span>История + эмоциональный профиль + контекст</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wireframes">
+      <div class="section-tag">Дизайн и макеты</div>
+      <h2 class="section-title">Схематичные макеты интерфейса</h2>
+      
+      <div class="wireframe-section">
+        <div class="wireframe-title">
+          <i class="fas fa-home"></i> Главная страница с эмоциональной картой
+        </div>
+        <div class="ascii-wireframe">
+          <pre>
+─────────────────────────────────────────────────────
+  MOODWAVE                             🔍 [___] 👤  
+─────────────────────────────────────────────────────
+                                                     
+              ЭМОЦИОНАЛЬНАЯ КАРТА                    
+                                                     
+        ┌─────────────────────────────┐              
+        │                             │              
+        │     •             •         │              
+        │                             │              
+        │                     Энергия │              
+        │     •             •         │              
+        │                             │              
+        └─────────────────────────────┘              
+               Настроение                            
+                                                     
+      [Работа]  [Учёба]  [Отдых]  [🎯 Найти]         
+                                                     
+  1. ♫ Трек 1 - Исполнитель (3:45)      [+]          
+  2. ♫ Трек 2 - Исполнитель (4:20)      [+]          
+  3. ♫ Трек 3 - Исполнитель (5:15)      [+]          
+                                                     
+─────────────────────────────────────────────────────
+          </pre>
+        </div>
+      </div>
+      
+      <div class="wireframe-section">
+        <div class="wireframe-title">
+          <i class="fas fa-music"></i> Страница плейлиста с историями
+        </div>
+        <div class="ascii-wireframe">
+          <pre>
+─────────────────────────────────────────────────────
+  ← МОИ ПЛЕЙЛИСТЫ                  "Осенние мысли"   
+─────────────────────────────────────────────────────
+                                                     
+                🍂 ОСЕНЬ 2023 🍂                     
+                24 трека • 2ч 15мин                  
+                                                     
+─────────────────────────────────────────────────────
+                                                     
+  1. ♫ Holocene - Bon Iver (5:37)                    
+     📝 "Первый снег в Москве, ехал на поезде"       
+     ──────────────────────────────────────────      
+                                                     
+  2. ♫ To Build a Home - Cinematic Orchestra (6:12)  
+     📝 "Переезд в новую квартиру"                   
+     ──────────────────────────────────────────      
+                                                     
+  3. ♫ Re:Stacks - Bon Iver (6:41)                   
+     [Добавить историю...]                           
+     ──────────────────────────────────────────      
+                                                     
+  4. ♫ Roslyn - Bon Iver & St. Vincent (4:16)        
+     📝 "Вечерний дождь за окном"                    
+                                                     
+─────────────────────────────────────────────────────
+          </pre>
+        </div>
+      </div>
+      
+      <div class="wireframe-section">
+        <div class="wireframe-title">
+          <i class="fas fa-user"></i> Личный кабинет и профиль
+        </div>
+        <div class="ascii-wireframe">
+          <pre>
+─────────────────────────────────────────────────────
+  👤 АЛЕКСЕЙ                           Настройки ⚙️  
+─────────────────────────────────────────────────────
+                                                     
+                             
+                                                     
+  📊 Статистика:                                     
+  • 247 треков прослушано                                                
+  • 12 плейлистов создано                            
+                                                                             
+                                                     
+  🎵 Мои плейлисты:                                  
+  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐               
+  │Утро  │ │Фокус │ │Вечер │ │Осень │               
+  │15т   │ │42т   │ │8т    │ │24т   │               
+  └──────┘ └──────┘ └──────┘ └──────┘               
+                                                     
+  🔍 Недавние поиски:                               
+  • "спокойная музыка для работы"                   
+  • "энергичная для тренировки"                     
+  • "грустные баллады"                              
+                                                     
+─────────────────────────────────────────────────────
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="section-tag">Сценарии использования</div>
+      <h2 class="section-title">Как это будет работать</h2>
+      
+      <div class="scenario">
+        <h3><i class="fas fa-search"></i> Сценарий 1: Поиск музыки для концентрации</h3>
+        <ul>
+          <li>Пользователь выбирает "Эмоциональная карта" → область "Сконцентрированное"</li>
+          <li>Выбирает активность: "Работа над кодом"</li>
+          <li>Система показывает подборку: lo-fi hip hop, ambient, instrumental post-rock</li>
+          <li>Пользователь добавляет треки в плейлист "Фокус-режим" с пометкой "Для программирования"</li>
+        </ul>
+      </div>
+      
+      <div class="scenario">
+        <h3><i class="fas fa-book"></i> Сценарий 2: Создание музыкального дневника</h3>
+        <ul>
+          <li>Пользователь слушает трек "Holocene - Bon Iver"</li>
+          <li>Добавляет к нему историю: "Слушал в поезде из Москвы в Питер, первый снег"</li>
+          <li>Система автоматически добавляет теги: "ностальгия", "зима", "путешествие"</li>
+          <li>Через месяц пользователь может фильтровать треки по воспоминаниям</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tech">
+      <div class="section-tag">Техническая реализация</div>
+      <h2 class="section-title">Стек технологий и архитектура</h2>
+      
+      <div class="tech-stack">
+        <div class="tech-item">
+          <h4><i class="fab fa-react"></i> Фронтенд</h4>
+          <ul>
+            <li><strong>React 18</strong> + TypeScript — строгая типизация</li>
+            <li><strong>Redux Toolkit</strong> — управление состоянием</li>
+            <li><strong>React Router 6</strong> — навигация</li>
+            <li><strong>D3.js</strong> — визуализация эмоциональной карты</li>
+          </ul>
+        </div>
+        
+        <div class="tech-item">
+          <h4><i class="fas fa-server"></i> Бэкенд</h4>
+          <ul>
+            <li><strong>Node.js + Express</strong> — серверная часть</li>
+            <li><strong>PostgreSQL</strong> — хранение данных</li>
+            <li><strong>TensorFlow.js</strong> — ML-модели анализа настроения</li>
+            <li><strong>Redis</strong> — кеширование рекомендаций</li>
+          </ul>
+        </div>
+        
+        <div class="tech-item">
+          <h4><i class="fas fa-project-diagram"></i> API и ML</h4>
+          <ul>
+            <li><strong>REST API</strong> — основные endpoint'ы:</li>
+            <li><code>POST /api/analyze-mood</code> — анализ текста/аудио</li>
+            <li><code>GET /api/recommendations</code> — ML-рекомендации</li>
+            <li><code>POST /api/stories</code> — сохранение историй</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="ml-explanation">
+        <h4><i class="fas fa-robot"></i> Как работает эмоциональный анализ:</h4>
+        <p>Используем предобученную модель <strong>BERT</strong> для анализа:</p>
+        <ol>
+          <li>Анализ текстов песен (при наличии) для определения эмоциональной окраски</li>
+          <li>Анализ аудио-характеристик (темп, тональность, инструменты)</li>
+          <li>Кластеризация треков по эмоциональным кластерам (256 состояний)</li>
+          <li>Сопоставление с эмоциональной картой пользователя</li>
+        </ol>
+        <p><em>Для MVP используем готовые ML-сервисы (Google Cloud Natural Language или аналоги)</em></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="status">
+        <div class="status-dot"></div>
+        <span>Этап 1 · Презентация проекта, разработка до 20 декабря</span>
+      </div>
+      <div class="links">
+        <a href="#top"><i class="fas fa-chevron-up"></i> Наверх</a>
+        <a href="#unique">Уникальность</a>
+        <a href="#wireframes">Макеты</a>
+        <a href="#tech">Технологии</a>
+        <a href="https://github.com/ваш-логин/moodwave" target="_blank">
+          <i class="fab fa-github"></i> Исходный код
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  </script>
+</body>
+</html>
